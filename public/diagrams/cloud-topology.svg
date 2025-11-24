@@ -1,0 +1,58 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-cloud" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#0B1224"/>
+    </linearGradient>
+    <linearGradient id="accent-cloud" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBBF24"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" rx="24" fill="url(#bg-cloud)"/>
+  <rect x="30" y="30" width="840" height="460" rx="20" fill="#0B1224" stroke="#1F2937" stroke-dasharray="6 6"/>
+  <text x="60" y="70" fill="#E5E7EB" font-size="20" font-family="Inter, sans-serif">Cloud Deployment Topology</text>
+  <text x="60" y="96" fill="#9CA3AF" font-size="14" font-family="Inter, sans-serif">Load balancer → containers → observability and CI/CD gating.</text>
+
+  <rect x="120" y="200" width="150" height="90" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="145" y="240" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Users</text>
+
+  <rect x="320" y="150" width="150" height="80" rx="12" fill="#0F172A" stroke="url(#accent-cloud)" stroke-width="2"/>
+  <text x="348" y="185" fill="#E0E7FF" font-size="14" font-family="Inter, sans-serif">Load Balancer</text>
+
+  <rect x="320" y="250" width="150" height="80" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="343" y="285" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">API Gateway</text>
+
+  <rect x="520" y="120" width="130" height="70" rx="12" fill="#0F172A" stroke="url(#accent-cloud)" stroke-width="2"/>
+  <text x="545" y="155" fill="#E0E7FF" font-size="14" font-family="Inter, sans-serif">Service A</text>
+
+  <rect x="520" y="210" width="130" height="70" rx="12" fill="#0F172A" stroke="url(#accent-cloud)" stroke-width="2"/>
+  <text x="545" y="245" fill="#E0E7FF" font-size="14" font-family="Inter, sans-serif">Service B</text>
+
+  <rect x="520" y="300" width="130" height="70" rx="12" fill="#0F172A" stroke="url(#accent-cloud)" stroke-width="2"/>
+  <text x="545" y="335" fill="#E0E7FF" font-size="14" font-family="Inter, sans-serif">Worker</text>
+
+  <rect x="700" y="180" width="130" height="70" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="722" y="215" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Observability</text>
+  <text x="722" y="235" fill="#9CA3AF" font-size="12" font-family="Inter, sans-serif">Logs/metrics</text>
+
+  <rect x="700" y="280" width="130" height="70" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="730" y="315" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">CI/CD</text>
+  <text x="730" y="335" fill="#9CA3AF" font-size="12" font-family="Inter, sans-serif">Canary</text>
+
+  <path d="M270 245H320" stroke="url(#accent-cloud)" stroke-width="3" marker-end="url(#arrow-cloud)"/>
+  <path d="M395 230V250" stroke="url(#accent-cloud)" stroke-width="3" marker-end="url(#arrow-cloud)"/>
+  <path d="M470 190H520" stroke="#FBBF24" stroke-width="2.5" marker-end="url(#arrow-cloud)"/>
+  <path d="M470 280H520" stroke="#FBBF24" stroke-width="2.5" marker-end="url(#arrow-cloud)"/>
+  <path d="M470 320C500 320 500 330 520 330" stroke="#FBBF24" stroke-width="2.5" marker-end="url(#arrow-cloud)"/>
+  <path d="M650 155H700" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrow-cloud)"/>
+  <path d="M650 245H700" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrow-cloud)"/>
+  <path d="M650 335H700" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrow-cloud)"/>
+  <path d="M765 250V280" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrow-cloud)"/>
+
+  <defs>
+    <marker id="arrow-cloud" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L6 3L0 6Z" fill="#A78BFA"/>
+    </marker>
+  </defs>
+</svg>

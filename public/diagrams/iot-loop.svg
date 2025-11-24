@@ -1,0 +1,55 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-iot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#0B1224"/>
+    </linearGradient>
+    <linearGradient id="accent-iot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F472B6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" rx="24" fill="url(#bg-iot)"/>
+  <rect x="30" y="30" width="840" height="460" rx="20" fill="#0B1224" stroke="#1F2937" stroke-dasharray="6 6"/>
+  <text x="60" y="70" fill="#E5E7EB" font-size="20" font-family="Inter, sans-serif">IoT Control Loop</text>
+  <text x="60" y="96" fill="#9CA3AF" font-size="14" font-family="Inter, sans-serif">Edge sensors stream to cloud; commands and alerts are orchestrated back.</text>
+
+  <rect x="90" y="190" width="140" height="80" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="122" y="225" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Edge Device</text>
+  <text x="122" y="245" fill="#9CA3AF" font-size="12" font-family="Inter, sans-serif">Camera + lock</text>
+
+  <rect x="270" y="150" width="150" height="70" rx="12" fill="#0F172A" stroke="url(#accent-iot)" stroke-width="2"/>
+  <text x="300" y="185" fill="#E0E7FF" font-size="14" font-family="Inter, sans-serif">Gateway</text>
+  <text x="300" y="205" fill="#A5B4FC" font-size="12" font-family="Inter, sans-serif">MQTT/WebRTC</text>
+
+  <rect x="270" y="250" width="150" height="70" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="310" y="285" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Events</text>
+  <text x="310" y="305" fill="#9CA3AF" font-size="12" font-family="Inter, sans-serif">Queue</text>
+
+  <rect x="480" y="180" width="140" height="80" rx="12" fill="#0F172A" stroke="url(#accent-iot)" stroke-width="2"/>
+  <text x="500" y="215" fill="#E0E7FF" font-size="14" font-family="Inter, sans-serif">Workflow</text>
+  <text x="500" y="235" fill="#A5B4FC" font-size="12" font-family="Inter, sans-serif">Delivery rules</text>
+
+  <rect x="660" y="150" width="150" height="80" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="692" y="185" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Notifications</text>
+  <text x="692" y="205" fill="#9CA3AF" font-size="12" font-family="Inter, sans-serif">SMS/App</text>
+
+  <rect x="660" y="250" width="150" height="80" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="700" y="285" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Monitoring</text>
+  <text x="700" y="305" fill="#9CA3AF" font-size="12" font-family="Inter, sans-serif">Alerts</text>
+
+  <path d="M230 230H270" stroke="url(#accent-iot)" stroke-width="3" marker-end="url(#arrow-iot)"/>
+  <path d="M230 230C260 230 260 285 270 285" stroke="#22D3EE" stroke-width="2.5" marker-end="url(#arrow-iot)"/>
+  <path d="M420 185H480" stroke="#F472B6" stroke-width="2.5" marker-end="url(#arrow-iot)"/>
+  <path d="M420 285H480" stroke="#F472B6" stroke-width="2.5" marker-end="url(#arrow-iot)"/>
+  <path d="M620 220H660" stroke="#22D3EE" stroke-width="2.5" marker-end="url(#arrow-iot)"/>
+  <path d="M620 220C640 220 640 290 660 290" stroke="#22D3EE" stroke-width="2.5" marker-end="url(#arrow-iot)"/>
+  <path d="M750 230C750 170 540 150 540 150" stroke="#F472B6" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow-iot)"/>
+  <path d="M750 330C750 390 540 360 540 360" stroke="#22D3EE" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow-iot)"/>
+
+  <defs>
+    <marker id="arrow-iot" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L6 3L0 6Z" fill="#22D3EE"/>
+    </marker>
+  </defs>
+</svg>

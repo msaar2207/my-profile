@@ -1,0 +1,51 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-close" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#0B1224"/>
+    </linearGradient>
+    <linearGradient id="accent-close" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" rx="24" fill="url(#bg-close)"/>
+  <rect x="30" y="30" width="840" height="460" rx="20" fill="#0B1224" stroke="#1F2937" stroke-dasharray="6 6"/>
+  <text x="60" y="70" fill="#E5E7EB" font-size="20" font-family="Inter, sans-serif">Readiness Checklist</text>
+  <text x="60" y="96" fill="#9CA3AF" font-size="14" font-family="Inter, sans-serif">Mapping capabilities to orchestration, RAG, cost control, and reliability.</text>
+
+  <rect x="80" y="150" width="320" height="70" rx="14" fill="#111827" stroke="#334155"/>
+  <text x="110" y="190" fill="#E5E7EB" font-size="15" font-family="Inter, sans-serif">AI Orchestration</text>
+  <circle cx="370" cy="185" r="12" fill="#0F172A" stroke="url(#accent-close)" stroke-width="2"/>
+  <path d="M364 185L368 189L376 181" stroke="#34D399" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="80" y="240" width="320" height="70" rx="14" fill="#111827" stroke="#334155"/>
+  <text x="110" y="280" fill="#E5E7EB" font-size="15" font-family="Inter, sans-serif">RAG &amp; Knowledge</text>
+  <circle cx="370" cy="275" r="12" fill="#0F172A" stroke="url(#accent-close)" stroke-width="2"/>
+  <path d="M364 275L368 279L376 271" stroke="#34D399" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="80" y="330" width="320" height="70" rx="14" fill="#111827" stroke="#334155"/>
+  <text x="110" y="370" fill="#E5E7EB" font-size="15" font-family="Inter, sans-serif">Cost &amp; Latency Control</text>
+  <circle cx="370" cy="365" r="12" fill="#0F172A" stroke="url(#accent-close)" stroke-width="2"/>
+  <path d="M364 365L368 369L376 361" stroke="#34D399" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="480" y="200" width="320" height="70" rx="14" fill="#111827" stroke="#334155"/>
+  <text x="510" y="240" fill="#E5E7EB" font-size="15" font-family="Inter, sans-serif">Reliability &amp; Monitoring</text>
+  <circle cx="770" cy="235" r="12" fill="#0F172A" stroke="url(#accent-close)" stroke-width="2"/>
+  <path d="M764 235L768 239L776 231" stroke="#34D399" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="480" y="290" width="320" height="70" rx="14" fill="#111827" stroke="#334155"/>
+  <text x="510" y="330" fill="#E5E7EB" font-size="15" font-family="Inter, sans-serif">Enterprise Fit</text>
+  <circle cx="770" cy="325" r="12" fill="#0F172A" stroke="url(#accent-close)" stroke-width="2"/>
+  <path d="M764 325L768 329L776 321" stroke="#34D399" stroke-width="2" stroke-linecap="round"/>
+
+  <path d="M400 185C430 185 430 205 480 205" stroke="url(#accent-close)" stroke-width="2.5" marker-end="url(#arrow-close)"/>
+  <path d="M400 275C430 275 430 215 480 215" stroke="url(#accent-close)" stroke-width="2.5" marker-end="url(#arrow-close)"/>
+  <path d="M400 365C430 365 430 305 480 305" stroke="url(#accent-close)" stroke-width="2.5" marker-end="url(#arrow-close)"/>
+
+  <defs>
+    <marker id="arrow-close" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L6 3L0 6Z" fill="#A78BFA"/>
+    </marker>
+  </defs>
+</svg>

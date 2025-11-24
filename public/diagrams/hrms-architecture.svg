@@ -1,0 +1,59 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-hrms" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#0B1224"/>
+    </linearGradient>
+    <linearGradient id="accent-hrms" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10B981"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" rx="24" fill="url(#bg-hrms)"/>
+  <rect x="30" y="30" width="840" height="460" rx="20" fill="#0B1224" stroke="#1F2937" stroke-dasharray="6 6"/>
+  <text x="60" y="70" fill="#E5E7EB" font-size="20" font-family="Inter, sans-serif">HRMS Multi-Tenant Architecture</text>
+  <text x="60" y="96" fill="#9CA3AF" font-size="14" font-family="Inter, sans-serif">Tenant isolation, agents for onboarding/documents, and payroll compliance.</text>
+
+  <rect x="80" y="180" width="150" height="80" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="108" y="215" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Tenants</text>
+  <text x="108" y="235" fill="#9CA3AF" font-size="12" font-family="Inter, sans-serif">Region + ACL</text>
+
+  <rect x="260" y="140" width="150" height="80" rx="12" fill="#0F172A" stroke="url(#accent-hrms)" stroke-width="2"/>
+  <text x="288" y="175" fill="#E0F2FE" font-size="14" font-family="Inter, sans-serif">API Layer</text>
+  <text x="288" y="195" fill="#A5B4FC" font-size="12" font-family="Inter, sans-serif">Auth + RBAC</text>
+
+  <rect x="260" y="240" width="150" height="80" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="292" y="275" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">AI Agents</text>
+  <text x="292" y="295" fill="#9CA3AF" font-size="12" font-family="Inter, sans-serif">Docs / ID</text>
+
+  <rect x="450" y="120" width="140" height="70" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="470" y="155" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Onboarding</text>
+
+  <rect x="450" y="200" width="140" height="70" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="485" y="235" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Payroll</text>
+
+  <rect x="450" y="280" width="140" height="70" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="478" y="315" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">EOS / WPS</text>
+
+  <rect x="630" y="160" width="150" height="80" rx="12" fill="#0F172A" stroke="url(#accent-hrms)" stroke-width="2"/>
+  <text x="650" y="195" fill="#E0F2FE" font-size="14" font-family="Inter, sans-serif">PostgreSQL</text>
+  <text x="650" y="215" fill="#A5B4FC" font-size="12" font-family="Inter, sans-serif">Schemas + RLS</text>
+
+  <rect x="630" y="270" width="150" height="80" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="650" y="305" fill="#E5E7EB" font-size="14" font-family="Inter, sans-serif">Object Storage</text>
+  <text x="650" y="325" fill="#9CA3AF" font-size="12" font-family="Inter, sans-serif">Docs + OCR</text>
+
+  <path d="M230 220H260" stroke="url(#accent-hrms)" stroke-width="3" marker-end="url(#arrow-hrms)"/>
+  <path d="M410 180H450" stroke="#10B981" stroke-width="2.5" marker-end="url(#arrow-hrms)"/>
+  <path d="M410 280H450" stroke="#10B981" stroke-width="2.5" marker-end="url(#arrow-hrms)"/>
+  <path d="M590 155H630" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrow-hrms)"/>
+  <path d="M590 235H630" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrow-hrms)"/>
+  <path d="M590 315H630" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrow-hrms)"/>
+  <path d="M700 240V270" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrow-hrms)"/>
+
+  <defs>
+    <marker id="arrow-hrms" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L6 3L0 6Z" fill="#10B981"/>
+    </marker>
+  </defs>
+</svg>
