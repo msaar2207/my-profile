@@ -406,6 +406,12 @@ export const SlideDeck: React.FC = () => {
                         {currentSlide.subtitle}
                       </p>
                     )}
+                    {isIntro && (
+                      <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 via-indigo-500 to-cyan-500 px-3 py-1 text-[11px] font-semibold text-white shadow-lg shadow-purple-900/40">
+                        <span className="inline-flex h-2 w-2 rounded-full bg-white" />
+                        Hire-ready: Senior Full-Stack & AI Systems
+                      </div>
+                    )}
                   </div>
                   {isIntro && (
                     <div className="ml-4 h-20 w-20 sm:h-24 sm:w-24 rounded-2xl overflow-hidden border border-slate-700 shadow-lg shadow-purple-900/30 ring-2 ring-purple-500/30">
@@ -416,36 +422,6 @@ export const SlideDeck: React.FC = () => {
                       />
                     </div>
                   )}
-                </div>
-                <div className="flex sm:hidden gap-2 text-[11px] text-slate-200">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      goTo(index - 1);
-                    }}
-                    disabled={index === 0}
-                    className={`px-3 py-1 rounded-full border ${
-                      index === 0
-                        ? "border-slate-700 text-slate-600 cursor-not-allowed"
-                        : "border-slate-600 hover:border-purple-400 hover:text-purple-200"
-                    }`}
-                  >
-                    ←
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      goTo(index + 1);
-                    }}
-                    disabled={index === slides.length - 1}
-                    className={`px-3 py-1 rounded-full border ${
-                      index === slides.length - 1
-                        ? "border-slate-700 text-slate-600 cursor-not-allowed"
-                        : "border-purple-500 text-purple-100 hover:bg-purple-500/10"
-                    }`}
-                  >
-                    →
-                  </button>
                 </div>
               </div>
 
@@ -524,7 +500,7 @@ export const SlideDeck: React.FC = () => {
           </AnimatePresence>
 
           {/* Bottom nav */}
-          <div className="flex items-center justify-between px-5 sm:px-8 pb-4 pt-2 border-t border-slate-800/70 text-[11px] text-slate-400">
+          <div className="hidden sm:flex items-center justify-between px-5 sm:px-8 pb-4 pt-2 border-t border-slate-800/70 text-[11px] text-slate-400">
             <button
               onClick={(e) => {
                 e.stopPropagation();
