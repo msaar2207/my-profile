@@ -1,7 +1,13 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useRef,
+} from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 type Slide = {
   id: string;
@@ -220,29 +226,77 @@ const slides: Slide[] = [
     },
   },
 ];
-const slideVariants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 80 : -80,
-    opacity: 0,
-    scale: 0.98,
-  }),
+const createSlideVariants = (reduceMotion: boolean) => ({
+  enter: (direction: number) =>
+    reduceMotion
+      ? {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }
+      : {
+          x: direction > 0 ? 80 : -80,
+          opacity: 0,
+          scale: 0.98,
+        },
   center: {
     x: 0,
     opacity: 1,
     scale: 1,
   },
-  exit: (direction: number) => ({
-    x: direction > 0 ? -80 : 80,
-    opacity: 0,
-    scale: 0.98,
-  }),
-};
+  exit: (direction: number) =>
+    reduceMotion
+      ? {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }
+      : {
+          x: direction > 0 ? -80 : 80,
+          opacity: 0,
+          scale: 0.98,
+        },
+});
 
 export const SlideDeck: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
+  const prefersReducedMotion = useReducedMotion();
+  const slideVariants = useMemo(
+    () => createSlideVariants(prefersReducedMotion),
+    [prefersReducedMotion]
+  );
+  const slideTransition = prefersReducedMotion
+    ? { duration: 0.01 }
+    : { duration: 0.4, ease: "easeInOut" };
+  const isAnimatingRef = useRef(false);
+  const modalOverlayMotion = prefersReducedMotion
+    ? {
+        initial: { opacity: 1 },
+        animate: { opacity: 1 },
+        exit: { opacity: 1 },
+      }
+    : {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+      };
+  const modalContentMotion = prefersReducedMotion
+    ? {
+        initial: { scale: 1, opacity: 1 },
+        animate: { scale: 1, opacity: 1 },
+        exit: { scale: 1, opacity: 1 },
+      }
+    : {
+        initial: { scale: 0.97, opacity: 1 },
+        animate: { scale: 1, opacity: 1 },
+        exit: { scale: 0.97, opacity: 1 },
+      };
+  const modalTransition = prefersReducedMotion
+    ? { duration: 0.01 }
+    : { duration: 0.2, ease: "easeOut" };
 
   const currentSlide = slides[index];
   const isIntro = currentSlide.id === "intro";
@@ -250,10 +304,11 @@ export const SlideDeck: React.FC = () => {
   const goTo = useCallback(
     (newIndex: number) => {
       if (newIndex < 0 || newIndex >= slides.length) return;
+      if (!prefersReducedMotion && isAnimatingRef.current) return;
       setDirection(newIndex > index ? 1 : -1);
       setIndex(newIndex);
     },
-    [index]
+    [index, prefersReducedMotion]
   );
 
   const handleKey = useCallback(
@@ -389,7 +444,13 @@ export const SlideDeck: React.FC = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={slideTransition}
+              onAnimationStart={() => {
+                if (!prefersReducedMotion) isAnimatingRef.current = true;
+              }}
+              onAnimationComplete={() => {
+                isAnimatingRef.current = false;
+              }}
               className="flex-1 p-5 sm:p-8 lg:p-10 flex flex-col"
             >
               <div className="flex items-center justify-between mb-4">
@@ -556,16 +617,18 @@ export const SlideDeck: React.FC = () => {
         {isModalOpen && (
           <motion.div
             className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center px-4 py-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={modalOverlayMotion.initial}
+            animate={modalOverlayMotion.animate}
+            exit={modalOverlayMotion.exit}
+            transition={modalTransition}
             onClick={closeModal}
           >
             <motion.div
               className="w-full max-w-5xl bg-slate-900/90 border border-slate-700/70 rounded-3xl shadow-2xl overflow-hidden"
-              initial={{ scale: 0.97 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.97 }}
+              initial={modalContentMotion.initial}
+              animate={modalContentMotion.animate}
+              exit={modalContentMotion.exit}
+              transition={modalTransition}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between px-5 py-3 border-b border-slate-800/70 bg-slate-900/80">
