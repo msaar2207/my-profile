@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useRef,
 } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, Transition, useReducedMotion } from "framer-motion";
 
 type Slide = {
   id: string;
@@ -265,11 +265,11 @@ export const SlideDeck: React.FC = () => {
   const [zoom, setZoom] = useState(1);
   const prefersReducedMotion = useReducedMotion();
   const slideVariants = useMemo(
-    () => createSlideVariants(prefersReducedMotion),
+    () => createSlideVariants(!!prefersReducedMotion),
     [prefersReducedMotion]
   );
-  const slideTransition = prefersReducedMotion
-    ? { duration: 0.01 }
+  const slideTransition: Transition = prefersReducedMotion
+    ? { duration: 0.01, ease: "easeInOut" }
     : { duration: 0.4, ease: "easeInOut" };
   const isAnimatingRef = useRef(false);
   const modalOverlayMotion = prefersReducedMotion
@@ -294,7 +294,7 @@ export const SlideDeck: React.FC = () => {
         animate: { scale: 1, opacity: 1 },
         exit: { scale: 0.97, opacity: 1 },
       };
-  const modalTransition = prefersReducedMotion
+  const modalTransition: Transition = prefersReducedMotion
     ? { duration: 0.01 }
     : { duration: 0.2, ease: "easeOut" };
 
